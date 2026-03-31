@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfolio di Francesco — Game Developer con Unreal Engine" />
+  <title>Francesco — Game Developer</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <div class="nav__container container">
+      <a href="#hero" class="nav__logo">Francesco<span class="accent">.</span></a>
+      <nav class="nav__links" id="nav-links" aria-label="Navigazione principale">
+        <a href="#projects" class="nav__link">Progetti</a>
+        <a href="#about" class="nav__link">About</a>
+        <a href="#contact" class="nav__link">Contatti</a>
+      </nav>
+      <button class="nav__hamburger" id="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="nav-links">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section id="hero" class="hero">
+      <div class="hero__bg" aria-hidden="true"></div>
+      <div class="container hero__content">
+        <p class="hero__eyebrow">Ciao, sono</p>
+        <h1 class="hero__name">Francesco</h1>
+        <p class="hero__title">Game Developer</p>
+        <p class="hero__tagline">Creo esperienze interattive con Unreal Engine — dai sistemi di gioco all'esperienza del giocatore.</p>
+        <a href="#projects" class="btn btn--outline">Guarda i progetti</a>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="section projects reveal">
+      <div class="container">
+        <h2 class="section__title">Progetti</h2>
+        <p class="section__sub">Una selezione dei miei lavori con Unreal Engine.</p>
+        <div class="projects__grid">
+
+          <article class="card">
+            <div class="card__cover card__cover--1"></div>
+            <div class="card__body">
+              <div class="card__tags">
+                <span class="tag">Unreal Engine 5</span>
+                <span class="tag">C++</span>
+                <span class="tag">Blueprints</span>
+              </div>
+              <h3 class="card__title">Progetto Alpha</h3>
+              <p class="card__desc">Breve descrizione del gioco — genere, meccaniche principali, cosa lo rende interessante.</p>
+              <div class="card__links">
+                <a href="#" class="btn btn--sm btn--outline" aria-label="Codice su GitHub"><i class="fab fa-github"></i> GitHub</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card__cover card__cover--2"></div>
+            <div class="card__body">
+              <div class="card__tags">
+                <span class="tag">Unreal Engine 5</span>
+                <span class="tag">Blueprints</span>
+                <span class="tag">Multiplayer</span>
+              </div>
+              <h3 class="card__title">Progetto Beta</h3>
+              <p class="card__desc">Breve descrizione del gioco — genere, meccaniche principali, cosa lo rende interessante.</p>
+              <div class="card__links">
+                <a href="#" class="btn btn--sm btn--outline" aria-label="Codice su GitHub"><i class="fab fa-github"></i> GitHub</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card__cover card__cover--3"></div>
+            <div class="card__body">
+              <div class="card__tags">
+                <span class="tag">Unreal Engine 4</span>
+                <span class="tag">C++</span>
+                <span class="tag">AI</span>
+              </div>
+              <h3 class="card__title">Progetto Gamma</h3>
+              <p class="card__desc">Breve descrizione del gioco — genere, meccaniche principali, cosa lo rende interessante.</p>
+              <div class="card__links">
+                <a href="#" class="btn btn--sm btn--outline" aria-label="Codice su GitHub"><i class="fab fa-github"></i> GitHub</a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section about reveal">
+      <div class="container about__inner">
+        <div class="about__text">
+          <h2 class="section__title">About Me</h2>
+          <p class="about__bio">Sono uno sviluppatore di giochi appassionato di Unreal Engine. Mi occupo di gameplay programming, sistemi procedurali e design di esperienze interattive. Sempre alla ricerca di nuove sfide tecniche e creative.</p>
+          <div class="about__skills">
+            <span class="tag">Unreal Engine 5</span>
+            <span class="tag">Unreal Engine 4</span>
+            <span class="tag">C++</span>
+            <span class="tag">Blueprints</span>
+            <span class="tag">Gameplay Systems</span>
+            <span class="tag">Shaders / Materials</span>
+            <span class="tag">Git</span>
+          </div>
+        </div>
+        <div class="about__photo">
+          <div class="about__avatar" aria-label="Foto profilo"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section contact reveal">
+      <div class="container contact__inner">
+        <h2 class="section__title">Contatti</h2>
+        <p class="section__sub">Hai un progetto in mente o vuoi semplicemente parlare?</p>
+        <div class="contact__links">
+          <a href="https://github.com/Francesco19-5" class="contact__link" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-github"></i>
+            <span>GitHub</span>
+          </a>
+          <a href="mailto:tua@email.com" class="contact__link">
+            <i class="fas fa-envelope"></i>
+            <span>Email</span>
+          </a>
+          <a href="https://linkedin.com/in/il-tuo-profilo" class="contact__link" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-linkedin"></i>
+            <span>LinkedIn</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 Francesco. Built with plain HTML/CSS/JS.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
