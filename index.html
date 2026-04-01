@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Portfolio di Francesco — Game Developer con Unreal Engine" />
+  <meta name="description" content="Francesco's portfolio'" />
   <title>Francesco — Game Developer</title>
 
   <!-- Google Fonts -->
@@ -20,12 +20,12 @@
 
   <!-- NAV -->
   <header class="nav" id="nav">
-    <div class="nav__container container">
+    <div class="nav__container container container--wide">
       <a href="#hero" class="nav__logo">Francesco<span class="accent">.</span></a>
-      <nav class="nav__links" id="nav-links" aria-label="Navigazione principale">
-        <a href="#projects" class="nav__link">Progetti</a>
+      <nav class="nav__links" id="nav-links" aria-label="Main navigation">
+        <a href="projects/index.html" class="nav__link">Projects</a>
         <a href="#about" class="nav__link">About</a>
-        <a href="#contact" class="nav__link">Contatti</a>
+        <a href="#contact" class="nav__link">Contact</a>
       </nav>
       <button class="nav__hamburger" id="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="nav-links">
         <span></span>
@@ -41,69 +41,25 @@
     <section id="hero" class="hero">
       <div class="hero__bg" aria-hidden="true"></div>
       <div class="container hero__content">
-        <p class="hero__eyebrow">Ciao, sono</p>
+        <p class="hero__eyebrow">Hi. I am</p>
         <h1 class="hero__name">Francesco</h1>
-        <p class="hero__title">Game Developer</p>
-        <p class="hero__tagline">Creo esperienze interattive con Unreal Engine — dai sistemi di gioco all'esperienza del giocatore.</p>
-        <a href="#projects" class="btn btn--outline">Guarda i progetti</a>
+        <p class="hero__title">Technical Game Designer</p>
+        <p class="hero__tagline">focused on gameplay systems, combat design and tools.<br>Building scalable systems from prototype to polished experience.</p>
+        <a href="projects/index.html" class="btn btn--outline">Go to projects</a>
       </div>
     </section>
 
     <!-- PROJECTS -->
-    <section id="projects" class="section projects reveal">
+    <section id="projects" class="section projects-cta reveal">
       <div class="container">
-        <h2 class="section__title">Progetti</h2>
-        <p class="section__sub">Una selezione dei miei lavori con Unreal Engine.</p>
-        <div class="projects__grid">
+        <h2 class="section__title">Projects</h2>
+        <p class="section__sub">A selection of my project - from work projects to game jam.</p>
 
-          <article class="card">
-            <div class="card__cover card__cover--1"></div>
-            <div class="card__body">
-              <div class="card__tags">
-                <span class="tag">Unreal Engine 5</span>
-                <span class="tag">C++</span>
-                <span class="tag">Blueprints</span>
-              </div>
-              <h3 class="card__title">Progetto Alpha</h3>
-              <p class="card__desc">Breve descrizione del gioco — genere, meccaniche principali, cosa lo rende interessante.</p>
-              <div class="card__links">
-                <a href="#" class="btn btn--sm btn--outline" aria-label="Codice su GitHub"><i class="fab fa-github"></i> GitHub</a>
-              </div>
-            </div>
-          </article>
+        <!-- Griglia in evidenza — popolata da js/projects.js (campo featured: true/false) -->
+        <div class="featured__grid" id="featured-grid"></div>
 
-          <article class="card">
-            <div class="card__cover card__cover--2"></div>
-            <div class="card__body">
-              <div class="card__tags">
-                <span class="tag">Unreal Engine 5</span>
-                <span class="tag">Blueprints</span>
-                <span class="tag">Multiplayer</span>
-              </div>
-              <h3 class="card__title">Progetto Beta</h3>
-              <p class="card__desc">Breve descrizione del gioco — genere, meccaniche principali, cosa lo rende interessante.</p>
-              <div class="card__links">
-                <a href="#" class="btn btn--sm btn--outline" aria-label="Codice su GitHub"><i class="fab fa-github"></i> GitHub</a>
-              </div>
-            </div>
-          </article>
-
-          <article class="card">
-            <div class="card__cover card__cover--3"></div>
-            <div class="card__body">
-              <div class="card__tags">
-                <span class="tag">Unreal Engine 4</span>
-                <span class="tag">C++</span>
-                <span class="tag">AI</span>
-              </div>
-              <h3 class="card__title">Progetto Gamma</h3>
-              <p class="card__desc">Breve descrizione del gioco — genere, meccaniche principali, cosa lo rende interessante.</p>
-              <div class="card__links">
-                <a href="#" class="btn btn--sm btn--outline" aria-label="Codice su GitHub"><i class="fab fa-github"></i> GitHub</a>
-              </div>
-            </div>
-          </article>
-
+        <div class="projects-cta__footer">
+          <a href="projects/index.html" class="btn btn--outline">Explore all projects <i class="fas fa-arrow-right"></i></a>
         </div>
       </div>
     </section>
@@ -113,14 +69,21 @@
       <div class="container about__inner">
         <div class="about__text">
           <h2 class="section__title">About Me</h2>
-          <p class="about__bio">Sono uno sviluppatore di giochi appassionato di Unreal Engine. Mi occupo di gameplay programming, sistemi procedurali e design di esperienze interattive. Sempre alla ricerca di nuove sfide tecniche e creative.</p>
+          <p class="about__bio">Technical Game Designer with a background in Computer Science and Game Design.
+            I specialize in gameplay systems, combat design, and tool development using Unreal Engine and Blueprint.
+            <br><br>
+            I enjoy working across the full development process—from rapid prototyping to refining game feel and polishing mechanics. I’m particularly interested in building scalable systems that empower both designers and players.
+            <br><br>
+            I’m proactive and continuously exploring new technologies and workflows to improve development efficiency and expand design possibilities.
+            <br><br>
+            Inspired by series like The Legend of Zelda and Splinter Cell, I aim to create gameplay experiences that are both responsive and meaningful.</p>
           <div class="about__skills">
             <span class="tag">Unreal Engine 5</span>
-            <span class="tag">Unreal Engine 4</span>
-            <span class="tag">C++</span>
             <span class="tag">Blueprints</span>
-            <span class="tag">Gameplay Systems</span>
-            <span class="tag">Shaders / Materials</span>
+            <span class="tag">C++</span>
+	    <span class="tag">Unity</span>
+            <span class="tag">C#</span>
+            <span class="tag">Perforce</span>
             <span class="tag">Git</span>
           </div>
         </div>
@@ -133,21 +96,25 @@
     <!-- CONTACT -->
     <section id="contact" class="section contact reveal">
       <div class="container contact__inner">
-        <h2 class="section__title">Contatti</h2>
-        <p class="section__sub">Hai un progetto in mente o vuoi semplicemente parlare?</p>
+        <h2 class="section__title">Contact</h2>
+        <p class="section__sub">Do you have a project in mind, or just want to chat?</p>
         <div class="contact__links">
           <a href="https://github.com/Francesco19-5" class="contact__link" target="_blank" rel="noopener noreferrer">
             <i class="fab fa-github"></i>
             <span>GitHub</span>
           </a>
-          <a href="mailto:tua@email.com" class="contact__link">
+          <a href="mailto:francesco.brancato.2001@gmail.com" class="contact__link">
             <i class="fas fa-envelope"></i>
             <span>Email</span>
           </a>
-          <a href="https://linkedin.com/in/il-tuo-profilo" class="contact__link" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.linkedin.com/in/francesco-brancato-gd/" class="contact__link" target="_blank" rel="noopener noreferrer">
             <i class="fab fa-linkedin"></i>
             <span>LinkedIn</span>
           </a>
+	  <a href="https://www.youtube.com/@FrancescoBrancato-GD" class="contact__link" target="_blank" rel="noopener noreferrer">
+  <i class="fab fa-youtube"></i>
+  <span>YouTube</span>
+</a>
         </div>
       </div>
     </section>
@@ -160,6 +127,7 @@
     </div>
   </footer>
 
+  <script src="js/projects.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>

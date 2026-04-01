@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="UFO Cowtcher — mobile game jam entry" />
+  <title>UFO Cowtcher — Francesco</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+
+  <header class="nav" id="nav">
+    <div class="nav__container container container--wide">
+      <a href="../index.html" class="nav__logo">Francesco<span class="accent">.</span></a>
+      <nav class="nav__links" id="nav-links" aria-label="Main navigation">
+        <a href="index.html" class="nav__link">Projects</a>
+        <a href="../index.html#about" class="nav__link">About</a>
+        <a href="../index.html#contact" class="nav__link">Contact</a>
+      </nav>
+      <button class="nav__hamburger" id="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="nav-links">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="project-hero project-hero--cover" style="background-image: url('../assets/images/projects/UFOCowtcher-TitleCard.jpg')">
+      <div class="container">
+        <a href="index.html" class="project-hero__back"><i class="fas fa-arrow-left"></i> All projects</a>
+        <div class="project-hero__tags">
+          <span class="tag">Unity</span>
+          <span class="tag">C#</span>
+          <span class="tag">Mobile</span>
+          <span class="tag">Game Jam</span>
+        </div>
+        <h1 class="project-hero__title">UFO Cowtcher</h1>
+        <p class="project-hero__tagline">A mobile game jam entry where you pilot a UFO and abduct as many cows as possible — fast-paced and fun.</p>
+        <div class="project-hero__links">
+          <a href="https://www.youtube.com/watch?v=wuMjqHoYJPo" class="btn btn--outline" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i> YouTube</a>
+          <a href="https://francesco-brancato.itch.io/ufo-cowtcher" class="btn btn--outline" target="_blank" rel="noopener noreferrer"><i class="fas fa-gamepad"></i> itch.io</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-video">
+      <div class="container">
+        <div class="video-wrapper">
+          <iframe src="https://www.youtube.com/embed/wuMjqHoYJPo?si=sU3feSo_jgJsKlJT" title="UFO Cowtcher — gameplay video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-screenshots">
+      <div class="container">
+        <div class="project-screenshots__grid">
+          <img src="../assets/images/projects/UFOCowtcher-screenshot1.jpg" alt="UFO Cowtcher screenshot 1" style="width:100%;border-radius:var(--radius);aspect-ratio:16/9;object-fit:cover;" />
+          <img src="../assets/images/projects/UFOCowtcher-screenshot2.jpg" alt="UFO Cowtcher screenshot 2" style="width:100%;border-radius:var(--radius);aspect-ratio:16/9;object-fit:cover;" />
+          <img src="../assets/images/projects/UFOCowtcher-screenshot3.jpg" alt="UFO Cowtcher screenshot 3" style="width:100%;border-radius:var(--radius);aspect-ratio:16/9;object-fit:cover;" />
+          <img src="../assets/images/projects/UFOCowtcher-screenshot4.jpg" alt="UFO Cowtcher screenshot 4" style="width:100%;border-radius:var(--radius);aspect-ratio:16/9;object-fit:cover;" />
+        </div>
+      </div>
+    </section>
+
+    <section class="project-content">
+      <div class="container">
+        <div class="project-content__inner">
+
+          <div class="project-main">
+            <div class="project-section">
+              <p class="project-section__title">Overview</p>
+              <p class="project-section__text">
+                UFO Cowtcher is a mobile game jam entry built with Unity. The player controls a UFO using touch/tilt input,
+                flying over a farm and activating a tractor beam to abduct cows before time runs out. The game prioritizes
+                satisfying feedback loops and a lighthearted tone.
+              </p>
+            </div>
+
+            <div class="project-section">
+              <p class="project-section__title">Core Mechanics</p>
+              <ul class="project-section__list">
+                <li>UFO movement with mobile-friendly touch controls</li>
+                <li>Tractor beam mechanic with timing-based abduction</li>
+                <li>Score system with escalating difficulty</li>
+                <li>Responsive audio and visual feedback for each catch</li>
+              </ul>
+            </div>
+
+            <div class="project-section">
+              <p class="project-section__title">Technical Notes</p>
+              <p class="project-section__text">
+                Developed in Unity targeting mobile platforms. Emphasis on smooth touch input, lightweight assets,
+                and a tight game loop that stays engaging across short play sessions.
+              </p>
+            </div>
+          </div>
+
+          <aside class="project-sidebar">
+            <div class="sidebar-group">
+              <p class="sidebar-group__label">Engine</p>
+              <div class="sidebar-group__tags"><span class="tag">Unity</span></div>
+            </div>
+            <div class="sidebar-group">
+              <p class="sidebar-group__label">Language</p>
+              <div class="sidebar-group__tags"><span class="tag">C#</span></div>
+            </div>
+            <div class="sidebar-group">
+              <p class="sidebar-group__label">Platform</p>
+              <div class="sidebar-group__tags"><span class="tag">Mobile</span></div>
+            </div>
+            <div class="sidebar-group">
+              <p class="sidebar-group__label">Year</p>
+              <p class="sidebar-group__value">2023</p>
+            </div>
+            <div class="sidebar-group">
+              <p class="sidebar-group__label">Type</p>
+              <p class="sidebar-group__value">Game Jam</p>
+            </div>
+            <div class="sidebar-group">
+              <p class="sidebar-group__label">Status</p>
+              <p class="sidebar-group__value">Released</p>
+            </div>
+          </aside>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 Francesco. Built with plain HTML/CSS/JS.</p>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

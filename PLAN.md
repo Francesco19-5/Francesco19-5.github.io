@@ -16,11 +16,17 @@ HTML/CSS/JS puro — nessun framework, nessun build step. Push su `main` = deplo
 ```
 
 ## Sezioni
-1. **Nav** — barra fissa con frosted glass, smooth scroll, hamburger mobile
-2. **Hero** — viewport pieno, nome + titolo + CTA, sfondo animato CSS
-3. **Projects** — griglia CSS auto-responsive, card con hover glow, placeholder per 3 giochi Unreal
+1. **Nav** — barra fissa con frosted glass, hamburger mobile
+2. **Hero** — 72vh, nome + titolo + CTA → porta a `projects/index.html`
+3. **Projects CTA** — sezione landing minimale con bottone alla pagina progetti
 4. **About Me** — bio + skill tags, foto profilo, layout 2 colonne
 5. **Contact** — link GitHub / email / LinkedIn con icone Font Awesome
+
+## Pagina Progetti (`projects/index.html`)
+- Header con back link
+- Filter tabs: Tutti / Solo / Gruppo / Game Jam
+- Griglia cards con `data-category` attribute
+- JS inline per filtraggio senza dipendenze
 
 ## Palette
 | Token | Valore |
