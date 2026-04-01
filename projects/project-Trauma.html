@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Trauma — narrative-driven Unreal Engine 5 project" />
-  <title>Trauma — Francesco</title>
+  <meta name="description" content="Trauma — survival-horror Unreal Engine 5 group project" />
+  <title>Trauma — Francesco Brancato</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
@@ -15,7 +15,7 @@
 
   <header class="nav" id="nav">
     <div class="nav__container container container--wide">
-      <a href="../index.html" class="nav__logo">Francesco<span class="accent">.</span></a>
+      <a href="../index.html" class="nav__logo">Francesco Brancato</a>
       <nav class="nav__links" id="nav-links" aria-label="Main navigation">
         <a href="index.html" class="nav__link">Projects</a>
         <a href="../index.html#about" class="nav__link">About</a>
@@ -36,13 +36,14 @@
           <span class="tag">Unreal Engine 5</span>
           <span class="tag">Blueprints</span>
           <span class="tag">C++</span>
-          <span class="tag">Solo</span>
+          <span class="tag">Group</span>
         </div>
         <h1 class="project-hero__title">Trauma</h1>
-        <p class="project-hero__tagline">A narrative-driven game exploring trauma through gameplay systems and state machine-driven design.</p>
+        <p class="project-hero__tagline">A survival-horror game exploring the trauma of the main character — escape the nightmare and unravel the mystery.</p>
         <div class="project-hero__links">
           <a href="https://www.youtube.com/watch?v=HdXNnOHbxtA" class="btn btn--outline" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i> YouTube</a>
           <a href="https://francesco-brancato.itch.io/trauma" class="btn btn--outline" target="_blank" rel="noopener noreferrer"><i class="fas fa-gamepad"></i> itch.io</a>
+          <a href="../assets/docs/HLGDD.docx.pdf" class="btn btn--outline" download><i class="fas fa-file-pdf"></i> HLGDD</a>
         </div>
       </div>
     </section>
@@ -58,7 +59,7 @@
     <section class="project-screenshots">
       <div class="container">
         <div class="project-screenshots__grid">
-          <img src="../assets/images/projects/Trauma-screenshot1.png" alt="Trauma — state machine diagram" style="width:100%;border-radius:var(--radius);aspect-ratio:16/9;object-fit:cover;" />
+          <img src="../assets/images/projects/Trauma-screenshot1.png" alt="Trauma — screenshot" style="width:100%;border-radius:var(--radius);aspect-ratio:16/9;object-fit:cover;" />
         </div>
       </div>
     </section>
@@ -71,26 +72,42 @@
             <div class="project-section">
               <p class="project-section__title">Overview</p>
               <p class="project-section__text">
-                Trauma is a solo Unreal Engine 5 project that explores how game mechanics can express psychological states. Built with a
-                complex state machine at its core, the game uses player-controlled systems to mirror the experience of navigating trauma.
+                Trauma is a group survival-horror project built in Unreal Engine 5. The player steps into the nightmare of the
+                main character, navigating an environment shaped by psychological trauma while evading enemies and uncovering
+                the mystery behind it all.
               </p>
+            </div>
+
+            <div class="project-section">
+              <p class="project-section__title">My Role</p>
+              <p class="project-section__text">
+                As Game Designer I was involved across the full development lifecycle: ideation, prototyping, and testing.
+                My specific contributions included:
+              </p>
+              <ul class="project-section__list">
+                <li>AI documentation for the main enemy and minions — from concept to final behavior spec</li>
+                <li>Collaborative work on the core game mechanics with the team</li>
+                <li>Full Animation Blueprint setup in UE5, covering all character animations</li>
+                <li>Writing and maintaining the project documentation throughout development</li>
+              </ul>
             </div>
 
             <div class="project-section">
               <p class="project-section__title">Core Systems</p>
               <ul class="project-section__list">
-                <li>State machine-driven gameplay — character states influence mechanics</li>
-                <li>Narrative systems that react to player choices and progression</li>
-                <li>Custom Blueprint + C++ architecture for the state machine</li>
-                <li>Audio and visual feedback tied to state transitions</li>
+                <li>Enemy AI — main antagonist with complex awareness and pursuit behavior</li>
+                <li>Minion AI — supporting enemies with their own behavior states</li>
+                <li>Animation Blueprint system driving all character animations in UE5</li>
+                <li>Narrative-driven level design guiding the player through the trauma arc</li>
               </ul>
             </div>
 
             <div class="project-section">
               <p class="project-section__title">Technical Notes</p>
               <p class="project-section__text">
-                The state machine was implemented in a hybrid Blueprint/C++ approach to balance rapid iteration with performance.
-                Careful attention was given to ensuring state transitions felt meaningful and communicated clearly to the player.
+                Built in UE5 with a hybrid Blueprints + C++ architecture. The Animation Blueprint covers all characters
+                and was set up to be both robust and easy to extend. AI behavior was fully documented before implementation,
+                keeping design intent and technical execution aligned throughout the project.
               </p>
             </div>
           </div>
@@ -106,11 +123,11 @@
             </div>
             <div class="sidebar-group">
               <p class="sidebar-group__label">Year</p>
-              <p class="sidebar-group__value">2025</p>
+              <p class="sidebar-group__value">2024</p>
             </div>
             <div class="sidebar-group">
               <p class="sidebar-group__label">Type</p>
-              <p class="sidebar-group__value">Solo</p>
+              <p class="sidebar-group__value">Group</p>
             </div>
             <div class="sidebar-group">
               <p class="sidebar-group__label">Status</p>
@@ -126,7 +143,7 @@
 
   <footer class="footer">
     <div class="container">
-      <p>&copy; 2026 Francesco. Built with plain HTML/CSS/JS.</p>
+      <p>&copy; 2026 Francesco Brancato. Built with plain HTML/CSS/JS.</p>
     </div>
   </footer>
 

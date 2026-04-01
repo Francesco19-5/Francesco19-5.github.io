@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="The Strongest Strongman — game jam entry" />
-  <title>The Strongest Strongman — Francesco</title>
+  <meta name="description" content="The Strongest Strongman — GMTK Game Jam 2024 entry" />
+  <title>The Strongest Strongman — Francesco Brancato</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
@@ -15,7 +15,7 @@
 
   <header class="nav" id="nav">
     <div class="nav__container container container--wide">
-      <a href="../index.html" class="nav__logo">Francesco<span class="accent">.</span></a>
+      <a href="../index.html" class="nav__logo">Francesco Brancato</a>
       <nav class="nav__links" id="nav-links" aria-label="Main navigation">
         <a href="index.html" class="nav__link">Projects</a>
         <a href="../index.html#about" class="nav__link">About</a>
@@ -36,9 +36,10 @@
           <span class="tag">Unity</span>
           <span class="tag">C#</span>
           <span class="tag">Game Jam</span>
+          <span class="tag">Group</span>
         </div>
         <h1 class="project-hero__title">The Strongest Strongman</h1>
-        <p class="project-hero__tagline">A game jam entry about strength, competition and over-the-top strongman challenges.</p>
+        <p class="project-hero__tagline">A GMTK Game Jam 2024 entry — punch iron cubes that squish and stretch when blocked by walls and floors.</p>
         <div class="project-hero__links">
           <a href="https://sailing-rocks.itch.io/the-strongest-strongman" class="btn btn--outline" target="_blank" rel="noopener noreferrer"><i class="fas fa-gamepad"></i> itch.io</a>
         </div>
@@ -53,25 +54,27 @@
             <div class="project-section">
               <p class="project-section__title">Overview</p>
               <p class="project-section__text">
-                The Strongest Strongman is a game jam entry built with the Sailing Rocks team. Players compete in a series of strongman
-                challenges, with exaggerated physics and fast-paced gameplay that captures the spectacle of strength competitions.
+                The Strongest Strongman is a GMTK Game Jam 2024 entry made by team Sailing Rocks. You play as a strongman
+                whose strength literally reshapes the world: hitting an iron cube sends it flying, but if a wall or the floor
+                blocks its path, the cube deforms — squishing flat or stretching tall depending on the collision.
               </p>
             </div>
 
             <div class="project-section">
               <p class="project-section__title">Core Mechanics</p>
               <ul class="project-section__list">
-                <li>Strongman challenges with exaggerated physics interactions</li>
-                <li>Score-based progression through multiple events</li>
-                <li>Fast-paced input timing for each challenge type</li>
+                <li>Iron cube deformation — cubes that are blocked by a surface squish or stretch rather than stopping</li>
+                <li>Physics-driven puzzle interactions built around the deformation system</li>
+                <li>Exaggerated strongman feel with impactful hit feedback</li>
               </ul>
             </div>
 
             <div class="project-section">
               <p class="project-section__title">Technical Notes</p>
               <p class="project-section__text">
-                Built in Unity with C# during a game jam sprint. Focus was on responsive feel, readable feedback,
-                and keeping the tone light and entertaining throughout.
+                Built in Unity with C# during the jam sprint. The deformation system was the core technical focus:
+                detecting the blocking surface and applying the correct scale transform to communicate the mechanic
+                clearly and satisfyingly to the player.
               </p>
             </div>
           </div>
@@ -87,11 +90,15 @@
             </div>
             <div class="sidebar-group">
               <p class="sidebar-group__label">Year</p>
-              <p class="sidebar-group__value">2023</p>
+              <p class="sidebar-group__value">2024</p>
             </div>
             <div class="sidebar-group">
               <p class="sidebar-group__label">Type</p>
               <p class="sidebar-group__value">Game Jam</p>
+            </div>
+            <div class="sidebar-group">
+              <p class="sidebar-group__label">Team</p>
+              <p class="sidebar-group__value">Sailing Rocks</p>
             </div>
             <div class="sidebar-group">
               <p class="sidebar-group__label">Status</p>
@@ -107,7 +114,7 @@
 
   <footer class="footer">
     <div class="container">
-      <p>&copy; 2026 Francesco. Built with plain HTML/CSS/JS.</p>
+      <p>&copy; 2026 Francesco Brancato. Built with plain HTML/CSS/JS.</p>
     </div>
   </footer>
 

@@ -9,9 +9,9 @@ const PROJECTS = [
   {
     id: 'InputToAction',
     title: 'Input To Action',
-    desc: 'A 2D puzzle platformer created for GMTK Game Jam 2023 (theme: "Roles Reversed"), placing in the TOP 5%.',
+    desc: 'A 2D puzzle platformer built in 48h for GMTK Game Jam 2023 (theme: "Roles Reversed") — TOP 5% out of thousands of entries.',
     techTags: ['Unity', 'C#'],
-    category: 'game-jam',
+    category: ['game-jam', 'group'],
     cover: 1,
     coverImage: '/assets/images/projects/InputToAction-TitleCard.gif',
     featured: true,
@@ -24,9 +24,9 @@ const PROJECTS = [
   {
     id: 'ProjectCyberpunk',
     title: 'Project Cyberpunk',
-    desc: 'A Unreal Engine project exploring cyberpunk aesthetics and gameplay systems.',
+    desc: 'A group project creating a Cyberpunk 2077-style mission — full gameplay implementation with procedural weapon systems and enemy AI.',
     techTags: ['Unreal Engine 5', 'Blueprints'],
-    category: 'solo',
+    category: 'group',
     cover: 2,
     coverImage: null,
     featured: false,
@@ -39,12 +39,12 @@ const PROJECTS = [
   {
     id: 'SamuYahtzee',
     title: 'Samu Yahtzee',
-    desc: 'A tabletop game design project combining Yahtzee mechanics with original combat and adventure systems.',
+    desc: 'A rogue-like game born as a tabletop project, combining Yahtzee mechanics with original combat and adventure systems.',
     techTags: ['Game Design', 'Tabletop'],
     category: 'solo',
     cover: 3,
     coverImage: '/assets/images/projects/SamuYahtzee-TitleCard.jpg',
-    featured: false,
+    featured: true,
     page: 'project-SamuYahtzee.html',
     github: null,
     youtubeEmbed: 'https://www.youtube.com/embed/0m-6y1GPBbU?si=aTxnaMzURFG72kHJ',
@@ -54,7 +54,7 @@ const PROJECTS = [
   {
     id: 'SleeperAgent',
     title: 'Sleeper Agent',
-    desc: 'A stealth-focused game design project with a detailed GDD and mechanics documentation.',
+    desc: 'A solo stealth-action prototype in Unreal Engine 5 — from GDD to playable implementation, featuring procedural hit reactions.',
     techTags: ['Game Design', 'Unreal Engine 5'],
     category: 'solo',
     cover: 4,
@@ -69,9 +69,9 @@ const PROJECTS = [
   {
     id: 'TheStrongestStrongman',
     title: 'The Strongest Strongman',
-    desc: 'A game jam entry about strength, competition and over-the-top strongman challenges.',
+    desc: 'A GMTK Game Jam 2024 entry — punch iron cubes that squish and stretch when blocked by walls and floors.',
     techTags: ['Unity', 'C#'],
-    category: 'game-jam',
+    category: ['game-jam', 'group'],
     cover: 5,
     coverImage: '/assets/images/projects/TheStrongestStrongman-TitleCard.gif',
     featured: false,
@@ -84,9 +84,9 @@ const PROJECTS = [
   {
     id: 'Trauma',
     title: 'Trauma',
-    desc: 'A narrative-driven game exploring trauma through gameplay systems and state machine-driven design.',
+    desc: 'A survival-horror game exploring the trauma of the main character — escape the nightmare and unravel the mystery.',
     techTags: ['Unreal Engine 5', 'Blueprints', 'C++'],
-    category: 'solo',
+    category: 'group',
     cover: 6,
     coverImage: '/assets/images/projects/Trauma-TitleCard.png',
     featured: true,
@@ -99,9 +99,9 @@ const PROJECTS = [
   {
     id: 'UFOCowtcher',
     title: 'UFO Cowtcher',
-    desc: 'A mobile game jam entry where you play as a UFO abducting cows — fast-paced and fun.',
+    desc: 'A mobile group project — pilot a UFO over a farm and abduct as many cows as you can before time runs out.',
     techTags: ['Unity', 'C#', 'Mobile'],
-    category: 'game-jam',
+    category: 'group',
     cover: 1,
     coverImage: '/assets/images/projects/UFOCowtcher-TitleCard.jpg',
     featured: false,
@@ -115,12 +115,14 @@ const PROJECTS = [
 
 /* ---- rendering ---- */
 
-const CATEGORY_LABEL = { solo: 'Solo', gruppo: 'Group', 'game-jam': 'Game Jam' };
+const CATEGORY_LABEL = { solo: 'Solo', group: 'Group', 'game-jam': 'Game Jam' };
 
 function renderCard(project, basePath) {
   const url      = basePath + project.page;
   const techHtml = project.techTags.map(t => `<span class="tag">${t}</span>`).join('');
-  const catLabel = CATEGORY_LABEL[project.category] || project.category;
+  const cats = Array.isArray(project.category) ? project.category : [project.category];
+  const catAttr = cats.join(' ');
+  const catLabel = cats.map(c => CATEGORY_LABEL[c] || c).join(' / ');
 
   const coverStyle = project.coverImage
     ? ` style="background-image:url('${project.coverImage}');background-size:cover;background-position:center;"`
@@ -137,7 +139,7 @@ function renderCard(project, basePath) {
     : '';
 
   return `
-    <article class="card" data-category="${project.category}" data-id="${project.id}">
+    <article class="card" data-category="${catAttr}" data-id="${project.id}">
       <a href="${url}" class="card__cover card__cover--${project.cover}"${coverStyle} aria-label="Go to ${project.title}"></a>
       <div class="card__body">
         <div class="card__tags">

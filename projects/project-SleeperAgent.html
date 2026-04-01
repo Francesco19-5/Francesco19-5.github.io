@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Sleeper Agent — stealth game design project" />
-  <title>Sleeper Agent — Francesco</title>
+  <meta name="description" content="Sleeper Agent — stealth action prototype in Unreal Engine 5" />
+  <title>Sleeper Agent — Francesco Brancato</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
@@ -15,7 +15,7 @@
 
   <header class="nav" id="nav">
     <div class="nav__container container container--wide">
-      <a href="../index.html" class="nav__logo">Francesco<span class="accent">.</span></a>
+      <a href="../index.html" class="nav__logo">Francesco Brancato</a>
       <nav class="nav__links" id="nav-links" aria-label="Main navigation">
         <a href="index.html" class="nav__link">Projects</a>
         <a href="../index.html#about" class="nav__link">About</a>
@@ -38,9 +38,10 @@
           <span class="tag">Solo</span>
         </div>
         <h1 class="project-hero__title">Sleeper Agent</h1>
-        <p class="project-hero__tagline">A stealth-focused game design project with a detailed Game Design Document and full mechanics documentation.</p>
+        <p class="project-hero__tagline">A solo stealth-action prototype in Unreal Engine 5 — from GDD to playable implementation, featuring procedural hit reactions as a technical highlight.</p>
         <div class="project-hero__links">
           <a href="https://www.youtube.com/playlist?list=PLZuFmqEN5mNopyBgXUL92cu6eDXz6q-uS" class="btn btn--outline" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i> YouTube</a>
+          <a href="../assets/docs/SleeperAgent-GDD.pdf" class="btn btn--outline" download><i class="fas fa-file-pdf"></i> GDD</a>
         </div>
       </div>
     </section>
@@ -61,26 +62,29 @@
             <div class="project-section">
               <p class="project-section__title">Overview</p>
               <p class="project-section__text">
-                Sleeper Agent is a stealth action game concept developed with a complete Game Design Document. The project focuses on
-                designing systems for player infiltration, AI awareness, and mission structure — inspired by games like Splinter Cell.
+                Sleeper Agent is a solo stealth-action project inspired by Splinter Cell. It goes from a complete Game Design Document
+                through to a playable UE5 prototype. The video playlist shows gameplay extracts from the prototype, covering
+                the various systems explored during development.
               </p>
             </div>
 
             <div class="project-section">
               <p class="project-section__title">Core Systems</p>
               <ul class="project-section__list">
-                <li>Stealth mechanics — visibility, noise, and cover systems</li>
+                <li>Stealth mechanics — visibility cones, noise propagation, and cover interactions</li>
                 <li>AI awareness states and patrol behavior design</li>
-                <li>Mission structure with optional objectives</li>
-                <li>Full GDD documenting all mechanics and design decisions</li>
+                <li>Mission structure with primary and optional objectives</li>
+                <li>Procedural hit reactions — direction and impact weight calculated in real-time using UE5 technology, driving contextual reaction animations</li>
               </ul>
             </div>
 
             <div class="project-section">
-              <p class="project-section__title">Design Notes</p>
+              <p class="project-section__title">Technical Notes</p>
               <p class="project-section__text">
-                This project was an exercise in thorough pre-production documentation — designing a complete, playable stealth game
-                on paper before moving to implementation, including edge cases and player progression.
+                The standout technical feature is the procedural hit reaction system: using newer UE5 capabilities, the direction
+                and "heaviness" of each hit are computed at runtime to generate contextually appropriate reactions,
+                rather than playing a fixed animation. The full GDD documenting all systems and design decisions
+                is available to download above.
               </p>
             </div>
           </div>
@@ -104,7 +108,7 @@
             </div>
             <div class="sidebar-group">
               <p class="sidebar-group__label">Status</p>
-              <p class="sidebar-group__value">In development</p>
+              <p class="sidebar-group__value">Prototype</p>
             </div>
           </aside>
 
@@ -116,7 +120,7 @@
 
   <footer class="footer">
     <div class="container">
-      <p>&copy; 2026 Francesco. Built with plain HTML/CSS/JS.</p>
+      <p>&copy; 2026 Francesco Brancato. Built with plain HTML/CSS/JS.</p>
     </div>
   </footer>
 

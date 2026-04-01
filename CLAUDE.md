@@ -59,3 +59,5 @@ The `main` branch is published directly via GitHub Pages. Pushing to `main` depl
 - [2026-03-31 — Setup iniziale + miglioramenti](docs/changelog/2026-03-31-setup-e-miglioramenti.md)
 - [2026-03-31 — Pagina progetti separata + hero ridotta + guida](docs/changelog/2026-03-31-pagina-progetti-e-guida.md)
 - [2026-04-01 — Real projects integration + language cleanup](docs/changelog/2026-04-01-real-projects-integration.md)
+- [2026-04-01 — Landing page reali per tutti i progetti](docs/changelog/2026-04-01-landing-pages-reali.md)
+- [2026-04-01 — Nome sito + sync descrizioni card/landing](docs/changelog/2026-04-01-nome-sito-e-sync-descrizioni.md)
