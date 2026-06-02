@@ -10,7 +10,7 @@
   --color-accent-dim: rgba(0, 240, 255, 0.10);
   --color-accent-glow:rgba(0, 240, 255, 0.20);
   --color-text:       #e8e8e8;
-  --color-text-muted: #888888;
+  --color-text-muted: #cccccc;
 
   --font-display: 'Space Grotesk', sans-serif;
   --font-body:    'Inter', sans-serif;
@@ -638,6 +638,16 @@ a {
   padding: 2rem 0;
   border-bottom: 1px solid var(--color-border);
 }
+.video-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+@media (min-width: 700px) {
+  .video-grid--two {
+    grid-template-columns: 1fr 1fr;
+  }
+}
 .video-wrapper {
   position: relative;
   padding-bottom: 56.25%;
@@ -738,6 +748,22 @@ a {
   margin-bottom: 2.5rem;
 }
 
+.project-group-title {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-text);
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 0.6rem;
+  margin: 3rem 0 1.75rem;
+}
+
+.project-group-title:first-child {
+  margin-top: 0;
+}
+
 .project-section__title {
   font-family: var(--font-display);
   font-size: 1.1rem;
@@ -776,6 +802,10 @@ a {
   position: absolute;
   left: 0;
   color: var(--color-accent);
+}
+
+.project-section__list--spaced {
+  gap: 1.5rem;
 }
 
 /* Sidebar */

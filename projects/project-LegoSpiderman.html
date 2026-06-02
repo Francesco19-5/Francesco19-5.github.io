@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Lego Spider-Man — AI &amp; Gameplay Prototype in Unreal Engine 5.4" />
+  <title>Lego Spider-Man — Francesco Brancato</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+
+  <header class="nav" id="nav">
+    <div class="nav__container container container--wide">
+      <a href="../index.html" class="nav__logo">Francesco Brancato</a>
+      <nav class="nav__links" id="nav-links" aria-label="Main navigation">
+        <a href="index.html" class="nav__link">Projects</a>
+        <a href="../index.html#about" class="nav__link">About</a>
+        <a href="../index.html#contact" class="nav__link">Contact</a>
+      </nav>
+      <button class="nav__hamburger" id="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="nav-links">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="project-hero project-hero--cover" style="background-image: url('../assets/images/projects/LegoSpiderman-TitleCard.png')">
+      <div class="container">
+        <a href="index.html" class="project-hero__back"><i class="fas fa-arrow-left"></i> All projects</a>
+        <div class="project-hero__tags">
+          <span class="tag">Unreal Engine 5.4</span>
+          <span class="tag">Blueprint</span>
+          <span class="tag">Blender</span>
+          <span class="tag">Solo</span>
+        </div>
+        <h1 class="project-hero__title">Lego Spider-Man</h1>
+        <p class="project-hero__tagline">A prototype on a what-if LEGO Spider-Man game inspired by LEGO Batman: Legacy of the Dark Knight.</p>
+        <div class="project-hero__links">
+          <a href="https://youtu.be/zzhF1fxBAQU" class="btn btn--outline" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i> YouTube</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-video">
+      <div class="container">
+        <div class="video-grid video-grid--two">
+          <div class="video-wrapper">
+            <iframe src="https://www.youtube.com/embed/zzhF1fxBAQU" title="Lego Spider-Man — video 1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+          <div class="video-wrapper">
+            <iframe src="https://www.youtube.com/embed/FxsIKp_LQCI" title="Lego Spider-Man — video 2" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-content">
+      <div class="container">
+        <div class="project-content__inner">
+
+          <div class="project-main">
+
+            <div class="project-section">
+              <p class="project-section__title">Overview</p>
+              <p class="project-section__text">
+                A prototype on a what-if LEGO Spider-Man game inspired by LEGO Batman: Legacy of the Dark Knight.
+                The project focuses on readable, LEGO-style gameplay with a solid AI architecture and a component-based player.
+              </p>
+            </div>
+
+            <h2 class="project-group-title">Player</h2>
+
+            <div class="project-section">
+              <p class="project-section__title">Component Architecture</p>
+              <p class="project-section__text">
+                The player is built around a fully modular Actor Component architecture: every ability lives in its own self-contained
+                component, meaning each system can be developed, iterated, and removed independently without touching the rest of the player.
+              </p>
+
+              <ul class="project-section__list project-section__list--spaced">
+                <li><strong>Web Shooting Component</strong><br>
+                  A single input action handles both a quick tap and a held input. Quick Web — three hits to immobilize an enemy, with
+                  web mesh spawned on the enemy as visual feedback. Charged Web — a single powerful shot with an integrated wall check;
+                  if a wall is nearby, the enemy snaps to it and is disabled. KO Launch — a physics-driven throw using a configurable
+                  parabolic arc, with angular spin in flight and a clean physics shutdown on landing. Mid-flight enemy collisions are
+                  also detected, allowing chain reactions. All web interactions go through a shared interface, keeping the component
+                  fully decoupled from enemy internals.
+                </li>
+                <li><strong>Melee Component</strong><br>
+                  Handles all melee combat, including standard combos and special attacks. The system is entirely self-contained —
+                  removing the component cleanly disables all melee capability without side effects on the rest of the player.
+                </li>
+                <li><strong>Web Swinging Component</strong><br>
+                  Manages all web swinging movement, including standard swings, tricks, and special swing variations inspired by
+                  Spider-Man 2. Without this component, the player loses all swinging capability entirely.
+                </li>
+                <li><strong>Spider Sense Component</strong><br>
+                  Triggered by an Anim Notify on an enemy's attack montage, it opens a short time window during which the player
+                  can react. A successful input triggers a slow motion effect — global time dilation drops while the player maintains
+                  full speed — combined with a dodge and post-process visual feedback. If the window expires without input, the attack lands normally.
+                </li>
+                <li><strong>Web Hook Component</strong><br>
+                  Allows the player to quickly reposition to a target location, functioning similarly to Batman's hook in the Arkham
+                  series — a fast traversal tool rather than a combat move.
+                </li>
+                <li><strong>Stealth Takedown Component</strong><br>
+                  Allows the player to silently eliminate unalerted enemies, supporting both aerial takedowns (from above) and rear
+                  takedowns in LEGO style. Requires the target to be in a non-alerted state.
+                </li>
+              </ul>
+            </div>
+
+            <h2 class="project-group-title">Enemies</h2>
+
+            <div class="project-section">
+              <p class="project-section__title">Enemy AI System</p>
+              <p class="project-section__text">
+                The AI is built on a State Tree + Behavior Tree stack driven by AIPerception (sight and damage).
+                Enemies cycle through three states — Relaxed → Alerted → Combat — with Combat subdivided into
+                Active (currently attacking) and Passive (waiting for permission to attack), which naturally staggers
+                attack timing without hardcoding delays.
+              </p>
+              <p class="project-section__text">Two enemy archetypes are implemented:</p>
+              <ul class="project-section__list">
+                <li><strong>Melee</strong> — closes distance and strikes at short range.</li>
+                <li><strong>Ranged</strong> — maintains optimal distance and tracks the player with a laser. The laser fires when it centers on the player or when a timeout expires.</li>
+              </ul>
+            </div>
+
+            <div class="project-section">
+              <p class="project-section__title">Token System</p>
+              <p class="project-section__text">
+                A token system (inspired by combat design patterns common in action games like the Batman Arkham series) limits how many enemies of each type can attack simultaneously. Enemies must request permission to attack, hold it for a limited number of hits, then release it — with a timeout safety net preventing deadlocks and immediate revocation on web hit or stagger.
+              </p>
+              <p class="project-section__text">
+                The architecture naturally supports multiple token layers, allowing fine-grained control over the overall combat rhythm. For example, a two-layer setup could separate enemies actively attacking from those strafing around the player, while a three-layer setup could introduce a buffer layer that cycles a single token across multiple enemies in sequence — creating the illusion of coordinated group behavior without each enemy needing to hold its own slot.
+              </p>
+            </div>
+
+            <div class="project-section">
+              <p class="project-section__title">EQS (Environment Query System)</p>
+              <ul class="project-section__list">
+                <li><strong>Melee EQS</strong> — generates strafing positions in a ring around the player, filtered by line of sight and spacing between enemies to avoid clustering.</li>
+                <li><strong>Ranged EQS</strong> — keeps ranged enemies at optimal engagement distance while maintaining line of sight.</li>
+              </ul>
+              <p class="project-section__text">Both use a Random Best run mode to add natural variation to positioning.</p>
+            </div>
+
+            <div class="project-section">
+              <p class="project-section__title">Alert / Shared Cognition</p>
+              <p class="project-section__text">
+                When an enemy spots the player and enters Combat, it propagates awareness to all nearby enemies within a radius,
+                forcing them into an alerted state. A debounce mechanism prevents the same alert from firing multiple times in the same frame.
+              </p>
+            </div>
+
+            <h2 class="project-group-title">Animation Style</h2>
+
+            <div class="project-section">
+              <p class="project-section__title">The Lego Movie aesthetic</p>
+              <p class="project-section__text">
+                The animations follow the stop-motion aesthetic of <em>The Lego Movie</em> rather than smooth, physically realistic movement.
+                LEGO figures move in discrete, snappy steps — no flowing transitions, no limb deformation, poses held for a beat before cutting to the next.
+              </p>
+              <p class="project-section__text">
+                This choice serves two purposes at once. On the technical side, rigid-body LEGO pieces don't bend, so animating them
+                in a stop-motion style means working <em>with</em> the constraint rather than against it — fewer keyframes, cleaner timing, faster iteration.
+              </p>
+              <p class="project-section__text">
+                On the feel side, the staccato rhythm reinforces the illusion that the characters are physical LEGO bricks being moved by hand.
+                The game already borrows the visual language of LEGO; the animation style closes the loop — it makes the world feel like a stop-motion set,
+                not a 3D animation.
+              </p>
+            </div>
+
+          </div>
+
+          <aside class="project-sidebar">
+            <div class="sidebar-group">
+              <p class="sidebar-group__label">Engine</p>
+              <div class="sidebar-group__tags"><span class="tag">Unreal Engine 5.4</span></div>
+            </div>
+            <div class="sidebar-group">
+              <p class="sidebar-group__label">Tools</p>
+              <div class="sidebar-group__tags">
+                <span class="tag">Blueprint</span>
+                <span class="tag">Blender</span>
+              </div>
+            </div>
+            <div class="sidebar-group">
+              <p class="sidebar-group__label">Year</p>
+              <p class="sidebar-group__value">2026</p>
+            </div>
+            <div class="sidebar-group">
+              <p class="sidebar-group__label">Type</p>
+              <p class="sidebar-group__value">Solo</p>
+            </div>
+            <div class="sidebar-group">
+              <p class="sidebar-group__label">Status</p>
+              <p class="sidebar-group__value">Prototype</p>
+            </div>
+            <div class="sidebar-group">
+              <p class="sidebar-group__label">Video</p>
+              <div class="sidebar-group__tags">
+                <a href="https://youtu.be/zzhF1fxBAQU" class="btn btn--outline btn--sm" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i> YouTube</a>
+              </div>
+            </div>
+          </aside>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 Francesco Brancato. Built with plain HTML/CSS/JS.</p>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>
