@@ -84,33 +84,34 @@
 
               <ul class="project-section__list project-section__list--spaced">
                 <li><strong>Web Shooting Component</strong><br>
-                  A single input action handles both a quick tap and a held input. Quick Web — three hits to immobilize an enemy, with
-                  web mesh spawned on the enemy as visual feedback. Charged Web — a single powerful shot with an integrated wall check;
-                  if a wall is nearby, the enemy snaps to it and is disabled. KO Launch — a physics-driven throw using a configurable
-                  parabolic arc, with angular spin in flight and a clean physics shutdown on landing. Mid-flight enemy collisions are
-                  also detected, allowing chain reactions. All web interactions go through a shared interface, keeping the component
+                  One input action handles both a quick tap and a held input. Quick Web: three hits immobilise an enemy, and a web mesh
+                  is spawned on the enemy as visual feedback. Charged Web: a single, powerful shot with an integrated wall check. If a
+                  wall is nearby, the enemy will snap to it and be disabled. KO Launch: a physics-driven throw with a configurable
+                  parabolic arc and angular spin in flight, resulting in a clean physics shutdown on landing. Mid-flight enemy collisions
+                  are also detected, allowing chain reactions. All web interactions go through a shared interface, keeping the component
                   fully decoupled from enemy internals.
                 </li>
                 <li><strong>Melee Component</strong><br>
-                  Handles all melee combat, including standard combos and special attacks. The system is entirely self-contained —
-                  removing the component cleanly disables all melee capability without side effects on the rest of the player.
+                  It handles all melee combat, including basic attacks and combos. The system is entirely self-contained, so removing
+                  the component cleanly disables all melee capability without affecting the rest of the player.
                 </li>
                 <li><strong>Web Swinging Component</strong><br>
-                  Manages all web swinging movement, including standard swings, tricks, and special swing variations inspired by
-                  Spider-Man 2. Without this component, the player loses all swinging capability entirely.
+                  Inspired by Spider-Man 2 for the PS2, it manages all web-swinging movement — standard swings, jumping out of a
+                  swing and diving to gain speed. Without this component, the player loses the ability to swing entirely.
                 </li>
                 <li><strong>Spider Sense Component</strong><br>
                   Triggered by an Anim Notify on an enemy's attack montage, it opens a short time window during which the player
-                  can react. A successful input triggers a slow motion effect — global time dilation drops while the player maintains
-                  full speed — combined with a dodge and post-process visual feedback. If the window expires without input, the attack lands normally.
+                  can react. If the player successfully inputs an action during this time, a slow-motion effect is triggered, combined
+                  with global time dilation, dodging and camera shake. If the window expires without input, the attack lands normally.
                 </li>
                 <li><strong>Web Hook Component</strong><br>
                   Allows the player to quickly reposition to a target location, functioning similarly to Batman's hook in the Arkham
                   series — a fast traversal tool rather than a combat move.
                 </li>
                 <li><strong>Stealth Takedown Component</strong><br>
-                  Allows the player to silently eliminate unalerted enemies, supporting both aerial takedowns (from above) and rear
-                  takedowns in LEGO style. Requires the target to be in a non-alerted state.
+                  This ability allows the player to silently eliminate unalerted enemies, supporting both aerial and rear takedowns.
+                  The selected enemy is highlighted via a post-processing effect to provide the player with feedback.
+                  The target must be in a non-alert state.
                 </li>
               </ul>
             </div>
@@ -121,32 +122,41 @@
               <p class="project-section__title">Enemy AI System</p>
               <p class="project-section__text">
                 The AI is built on a State Tree + Behavior Tree stack driven by AIPerception (sight and damage).
-                Enemies cycle through three states — Relaxed → Alerted → Combat — with Combat subdivided into
-                Active (currently attacking) and Passive (waiting for permission to attack), which naturally staggers
-                attack timing without hardcoding delays.
+                Enemies cycle through three states: Relaxed, Alerted, and Combat.
+              </p>
+              <p class="project-section__text">
+                Combat is further subdivided into Active (currently attacking) and Passive (waiting for permission to attack),
+                which naturally staggers the timing of attacks without the need for hardcoding delays.
               </p>
               <p class="project-section__text">Two enemy archetypes are implemented:</p>
               <ul class="project-section__list">
-                <li><strong>Melee</strong> — closes distance and strikes at short range.</li>
-                <li><strong>Ranged</strong> — maintains optimal distance and tracks the player with a laser. The laser fires when it centers on the player or when a timeout expires.</li>
+                <li><strong>Melee</strong> — closes the distance and strikes at short range.</li>
+                <li><strong>Ranged</strong> — maintains optimal distance and tracks the player with a laser. The laser fires when it centres on the player or when a timeout expires.</li>
               </ul>
             </div>
 
             <div class="project-section">
               <p class="project-section__title">Token System</p>
               <p class="project-section__text">
-                A token system (inspired by combat design patterns common in action games like the Batman Arkham series) limits how many enemies of each type can attack simultaneously. Enemies must request permission to attack, hold it for a limited number of hits, then release it — with a timeout safety net preventing deadlocks and immediate revocation on web hit or stagger.
+                Inspired by combat design patterns common in action games such as the Batman: Arkham series, a token system limits
+                how many enemies of each type can attack simultaneously. Enemies must request permission to attack and hold it for
+                a limited number of hits before releasing it. There is a timeout safety net to prevent deadlocks and immediate
+                revocation on web hit or stagger.
               </p>
               <p class="project-section__text">
-                The architecture naturally supports multiple token layers, allowing fine-grained control over the overall combat rhythm. For example, a two-layer setup could separate enemies actively attacking from those strafing around the player, while a three-layer setup could introduce a buffer layer that cycles a single token across multiple enemies in sequence — creating the illusion of coordinated group behavior without each enemy needing to hold its own slot.
+                The architecture naturally supports multiple token layers, allowing fine-grained control over the combat rhythm as
+                a whole. For instance, a two-layer configuration could distinguish between enemies that are actively attacking and
+                those that are moving around the player. Alternatively, a three-layer configuration could introduce an intermediate
+                layer that circulates a single token among multiple enemies in sequence, creating the impression of organised group
+                behaviour without each enemy requiring its own token.
               </p>
             </div>
 
             <div class="project-section">
               <p class="project-section__title">EQS (Environment Query System)</p>
               <ul class="project-section__list">
-                <li><strong>Melee EQS</strong> — generates strafing positions in a ring around the player, filtered by line of sight and spacing between enemies to avoid clustering.</li>
-                <li><strong>Ranged EQS</strong> — keeps ranged enemies at optimal engagement distance while maintaining line of sight.</li>
+                <li><strong>Melee EQS</strong> — generates strafing positions in a ring around the player. These positions are filtered by line of sight and the spacing between enemies to avoid clustering.</li>
+                <li><strong>Ranged EQS</strong> — keeps ranged enemies at the optimal engagement distance while maintaining line of sight.</li>
               </ul>
               <p class="project-section__text">Both use a Random Best run mode to add natural variation to positioning.</p>
             </div>
@@ -159,22 +169,54 @@
               </p>
             </div>
 
+            <h2 class="project-group-title">PCG — City Generation</h2>
+
+            <div class="project-section">
+              <p class="project-section__title">A fictional Manhattan neighbourhood</p>
+              <p class="project-section__text">
+                The city is procedurally generated to recreate the feel of a Manhattan neighbourhood, a dense urban grid in which
+                streets run perpendicular to each other, dividing the space into regular city blocks. This layout is not random;
+                it follows the same orthogonal logic as real New York boroughs, giving the world a structure that is instantly
+                recognisable and fits the Spider-Man setting.
+              </p>
+            </div>
+
+            <div class="project-section">
+              <p class="project-section__title">Modular and customisable</p>
+              <p class="project-section__text">
+                The entire system is built around exposed parameters — nothing is hardcoded. This includes street width, building
+                lot dimensions, and minimum and maximum building height, among others. All values can be adjusted at any time without
+                affecting the generation logic. This makes it easy to change the scale and density of the city, from a tight
+                neighbourhood to a sprawling district, simply by adjusting a few numbers.
+              </p>
+            </div>
+
+            <div class="project-section">
+              <p class="project-section__title">Secondary elements</p>
+              <p class="project-section__text">
+                Even as a prototype, the city was missing something. That's why I decided to include a set of accessory elements.
+              </p>
+              <p class="project-section__text">
+                For example, cars can be found driving along the streets, or a car park occupying an entire block in place of buildings.
+              </p>
+            </div>
+
             <h2 class="project-group-title">Animation Style</h2>
 
             <div class="project-section">
               <p class="project-section__title">The Lego Movie aesthetic</p>
               <p class="project-section__text">
-                The animations follow the stop-motion aesthetic of <em>The Lego Movie</em> rather than smooth, physically realistic movement.
-                LEGO figures move in discrete, snappy steps — no flowing transitions, no limb deformation, poses held for a beat before cutting to the next.
+                Rather than smooth, physically realistic movement, the animations follow the stop-motion aesthetic of <em>The Lego Movie</em>.
+                LEGO figures move in snappy, discrete steps — there are no flowing transitions or limb deformations, and poses are held
+                for a moment before cutting to the next one.
               </p>
               <p class="project-section__text">
-                This choice serves two purposes at once. On the technical side, rigid-body LEGO pieces don't bend, so animating them
-                in a stop-motion style means working <em>with</em> the constraint rather than against it — fewer keyframes, cleaner timing, faster iteration.
+                This choice serves two purposes. From a technical perspective, rigid LEGO pieces cannot bend, so animating them in a
+                stop-motion style means working with this constraint rather than against it, resulting in fewer keyframes, cleaner
+                timing and faster iteration.
               </p>
               <p class="project-section__text">
-                On the feel side, the staccato rhythm reinforces the illusion that the characters are physical LEGO bricks being moved by hand.
-                The game already borrows the visual language of LEGO; the animation style closes the loop — it makes the world feel like a stop-motion set,
-                not a 3D animation.
+                In terms of feel, the snappy rhythm reinforces the illusion that the characters are physical LEGO bricks being moved by hand — turning the game world into something that feels closer to a stop-motion set than a 3D animation.
               </p>
             </div>
 
