@@ -13,7 +13,7 @@ const PROJECTS = [
     techTags: ['Unreal Engine 5.4', 'Blueprint', 'Blender'],
     category: 'solo',
     cover: 2,
-    coverImage: '/assets/images/projects/LegoSpiderman-TitleCard.png',
+    coverImage: '/assets/images/projects/LegoSpiderman-TitleCard.jpg',
     featured: true,
     page: 'project-LegoSpiderman.html',
     github: null,
