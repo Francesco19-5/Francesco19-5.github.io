@@ -404,6 +404,9 @@ a {
   flex-wrap: wrap;
   gap: 0.4rem;
   margin-bottom: 0.75rem;
+  height: 4rem;
+  overflow: hidden;
+  align-content: flex-start;
 }
 
 .card__title {
@@ -427,12 +430,19 @@ a {
   color: var(--color-text-muted);
   line-height: 1.6;
   margin-bottom: 1rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 6;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  min-height: 8.4rem;
 }
 
 .card__links {
   display: flex;
   gap: 0.6rem;
   flex-wrap: wrap;
+  min-height: 4.5rem;
+  align-content: flex-start;
 }
 
 /* =============================================
